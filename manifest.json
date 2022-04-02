@@ -11,8 +11,12 @@
   "manifest_version": 3,
   "content_scripts": [
     {
-      "matches": ["*://web.whatsapp.com/*"],
-      "js": ["whatsapptime.js"]
+      "matches": [
+        "*://web.whatsapp.com/*"
+      ],
+      "js": [
+        "whatsapptime.js"
+      ]
     }
   ],
   "action": {
