@@ -1,0 +1,24 @@
+{
+  "name": "Whatsapp 24-Hour Time Format",
+  "description": "Displays time as 24-Hour instead of am/pm",
+  "homepage_url": "https://github.com/MathijsNL/WhatsappTime",
+  "icons": {
+    "16": "16.png",
+    "48": "48.png",
+    "128": "128.png"
+  },
+  "version": "0.1",
+  "manifest_version": 3,
+  "content_scripts": [
+    {
+      "matches": ["*://web.whatsapp.com/*"],
+      "js": ["whatsapptime.js"]
+    }
+  ],
+  "action": {
+    "default_title": "Convert Whatsapp Time"
+  },
+  "host_permissions": [
+    "https://web.whatsapp.com/"
+  ]
+}
