@@ -2,7 +2,7 @@ function conv12to24(str) {
 	const re = /^(\d\d?):(\d\d) ([ap])m$/
 	const hr = parseInt(str.match(re)[1])
 	const mi = parseInt(str.match(re)[2])
-	const add = str.match(re)[3] === "p"
+	const add = str.match(re)[3] === "p" && hr != 12
 
 	return ((hr + 12 * add) % 24).toString().padStart(2, "0") + ":" + mi.toString().padStart(2, "0")
 
