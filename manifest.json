@@ -17,8 +17,5 @@
   ],
   "action": {
     "default_title": "Convert Whatsapp Time"
-  },
-  "host_permissions": [
-    "https://web.whatsapp.com/"
-  ]
+  }
 }
