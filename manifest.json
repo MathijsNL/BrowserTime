@@ -7,7 +7,7 @@
     "48": "48.png",
     "128": "128.png"
   },
-  "version": "0.3",
+  "version": "0.4",
   "manifest_version": 3,
   "content_scripts": [
     {

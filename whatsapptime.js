@@ -1,9 +1,9 @@
 function conv12to24(str) {
-	const re = /^(\d\d?):(\d\d) ([ap])m$/
+	const re = /^(\d\d?):(\d\d) ([aApP])[mM]$/
 	var hr = parseInt(str.match(re)[1])
 	const mi = parseInt(str.match(re)[2])
-	if (hr == 12 && str.match(re)[3] === "a") {hr = 0}
-	const add = str.match(re)[3] === "p" && hr != 12
+	if (hr == 12 && str.match(re)[3].toLowerCase() === "a") {hr = 0}
+	const add = str.match(re)[3].toLowerCase() === "p" && hr != 12
 
 
 	return (hr + 12 * add).toString().padStart(2, "0") + ":" + mi.toString().padStart(2, "0")
