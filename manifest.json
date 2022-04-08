@@ -18,8 +18,5 @@
         "whatsapptime.js"
       ]
     }
-  ],
-  "action": {
-    "default_title": "Convert Whatsapp Time"
-  }
+  ]
 }
