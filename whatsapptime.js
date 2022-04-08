@@ -28,22 +28,22 @@ function changeMessageTime() {
 	[
 		...document.body.getElementsByTagName("span"),
 		...document.body.getElementsByTagName("div")
-	].filter(e => e.innerText.match(/^\d\d?:\d\d [ap]m$/))
+	].filter(e => e.innerText.match(/^\d\d?:\d\d [aApP][mM]$/))
 		.forEach(e => { if (e.innerText.length > 0) { e.innerText = conv12to24(e.innerText) } })
 }
 function changeLastSeenTodayTime() {
 	[
 		...document.body.getElementsByTagName("span"),
 		...document.body.getElementsByTagName("div")
-	].filter(e => e.innerText.match(/^last seen today at \d\d?:\d\d [ap]m$/))
+	].filter(e => e.innerText.match(/^last seen today at \d\d?:\d\d [aApP][mM]$/))
 		.forEach(e => { if (e.innerText.length > 0) { e.innerText = lastseentodayconv12to24(e.innerText) } })
 }
 function changeLastSeenYesterdayTime() {
 	[
 		...document.body.getElementsByTagName("span"),
 		...document.body.getElementsByTagName("div")
-	].filter(e => e.innerText.match(/^last seen yesterday at \d\d?:\d\d [ap]m$/))
-		.forEach(e => { if (e.innerText.length > 0) { e.innerText = lastseenyesterdayconv12to24(e.innerText) } })
+	].filter(e => e.innerText.match(/^last seen yesterday at \d\d?:\d\d [aApP][mM]$/))
+		.forEach(e => { if (e.innerText.length > 6) { e.innerText = lastseenyesterdayconv12to24(e.innerText) } })
 }
 
 setInterval(() => {
