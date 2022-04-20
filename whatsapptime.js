@@ -1,5 +1,8 @@
+const re = /^(\d\d?):(\d\d) ([aApP])[\. ]?[mM]\.?$/
+const reToday = /^last seen today at (\d\d?):(\d\d) ([aApP])[\. ]?[mM]\.?$/
+const reYesterday = /^last seen yesterday at (\d\d?):(\d\d) ([aApP])[\. ]?[mM]\.?$/
+
 function conv12to24(str) {
-	const re = /^(\d\d?):(\d\d) ([aApP])[mM]$/
 	var hr = parseInt(str.match(re)[1])
 	const mi = parseInt(str.match(re)[2])
 	if (hr == 12 && str.match(re)[3].toLowerCase() === "a") { hr = 0 }
@@ -26,21 +29,21 @@ function changeMessageTime() {
 	[
 		...document.body.getElementsByTagName("span"),
 		...document.body.getElementsByTagName("div")
-	].filter(e => e.innerText.match(/^\d\d?:\d\d [aApP][mM]$/))
+	].filter(e => e.innerText.match(re))
 		.forEach(e => { if (e.innerText.length > 0) { e.innerText = conv12to24(e.innerText) } })
 }
 function changeLastSeenTodayTime() {
 	[
 		...document.body.getElementsByTagName("span"),
 		...document.body.getElementsByTagName("div")
-	].filter(e => e.innerText.match(/^last seen today at \d\d?:\d\d [aApP][mM]$/))
+	].filter(e => e.innerText.match(reToday))
 		.forEach(e => { if (e.innerText.length > 0) { e.innerText = lastseentodayconv12to24(e.innerText) } })
 }
 function changeLastSeenYesterdayTime() {
 	[
 		...document.body.getElementsByTagName("span"),
 		...document.body.getElementsByTagName("div")
-	].filter(e => e.innerText.match(/^last seen yesterday at \d\d?:\d\d [aApP][mM]$/))
+	].filter(e => e.innerText.match(reYesterday))
 		.forEach(e => { if (e.innerText.length > 6) { e.innerText = lastseenyesterdayconv12to24(e.innerText) } })
 }
 
