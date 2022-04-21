@@ -1,6 +1,6 @@
-const re = /^(\d\d?):(\d\d) ([aApP])[\. ]?[mM]\.?$/
-const reToday = /^last seen today at (\d\d?):(\d\d) ([aApP])[\. ]?[mM]\.?$/
-const reYesterday = /^last seen yesterday at (\d\d?):(\d\d) ([aApP])[\. ]?[mM]\.?$/
+const re = /^(\d\d?):(\d\d) ([aApP])\.?\s?[mM]\.?$/
+const reToday = /^last seen today at (\d\d?):(\d\d) ([aApP])\.?\s?[mM]\.?$/
+const reYesterday = /^last seen yesterday at (\d\d?):(\d\d) ([aApP])\.?\s?[mM]\.?$/
 
 function conv12to24(str) {
 	var hr = parseInt(str.match(re)[1])
